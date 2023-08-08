@@ -1,0 +1,48 @@
+======= Loading personnel data =======
+Added 24817 persons to the person manager.
+
+Removed 1000 persons from the person manager.
+
+======= Exercising lookups ===========
+Showing the first 10 records.
+
+ID: MC0000Q982Z5GLUFA
+First Name: Helen
+Last Name: Crook
+
+ID: MC00JIE2D982ZUFOE
+First Name: Lina
+Last Name: Hoppe
+
+ID: MC00EF6Y982FUWQ6H
+First Name: Bruce
+Last Name: Sam
+
+ID: MC00QWW39820XHLCQ
+First Name: Harlow
+Last Name: Kaplan
+
+ID: MC0074S9829T9HP1P
+First Name: Jazmin
+Last Name: Gillette
+
+ID: MC00SQU9825LSVO4F
+First Name: Jamison
+Last Name: Hurd
+
+ID: MC00MJ5Q982EY9AX5
+First Name: Jaqueline
+Last Name: Steen
+
+ID: MC00CXPD98212FPDY
+First Name: Cade
+Last Name: Bolen
+
+ID: MC00R4O982BE31CF1
+First Name: Lilian
+Last Name: Hemphill
+
+ID: MC0078NF982DSR3W2
+First Name: Bryson
+Last Name: Olvera
+

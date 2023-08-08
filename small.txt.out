@@ -1,0 +1,48 @@
+======= Loading personnel data =======
+Added 23 persons to the person manager.
+
+Removed 1 persons from the person manager.
+
+======= Exercising lookups ===========
+Showing the first 10 records.
+
+ID: MC00G9I4C982QJ4RN
+First Name: Piper
+Last Name: Day
+
+ID: MC007JK982M9N6XB5
+First Name: Matthias
+Last Name: Shipman
+
+ID: MC000TJJ982C1FKYP
+First Name: Sabrina
+Last Name: Hook
+
+ID: MC00G9I4C982QJ4RN
+First Name: Piper
+Last Name: Day
+
+ID: MC00FTA982DP027NN
+First Name: April
+Last Name: Redd
+
+ID: MC000TJJ982C1FKYP
+First Name: Sabrina
+Last Name: Hook
+
+ID: MC00ER3DK982ED30N
+First Name: Neil
+Last Name: Mathias
+
+ID: MC00236R9982U8Y2Y
+First Name: Carmelo
+Last Name: Grace
+
+ID: MC00EWBW9826FOB18
+First Name: Justin
+Last Name: Hinson
+
+ID: MC000TJJ982C1FKYP
+First Name: Sabrina
+Last Name: Hook
+
