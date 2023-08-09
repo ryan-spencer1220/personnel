@@ -39,10 +39,10 @@ void Person::operator=(const Person &per)
 
 void Person::print()
 {
-  cout << "ID: " << id << endl;
-  cout << "First Name: " << fname << endl;
-  cout << "Last Name: " << lname << endl;
-  cout << "Family ID: " << familyId << endl;
+  // cout << "ID: " << id << endl;
+  // cout << "First Name: " << fname << endl;
+  // cout << "Last Name: " << lname << endl;
+  // cout << "Family ID: " << familyId << endl;
 }
 
 char *Person::getId()
