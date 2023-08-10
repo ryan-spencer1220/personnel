@@ -97,7 +97,7 @@ int main(int argc, char **argv)
       {
         for (int i = 0; i < NUM_LOOKUPS; i++)
         {
-          const Person *perPtr = personMgr.findPerson(id);
+          Person *perPtr = personMgr.findPerson(id);
 
           // If this is the first lookup for this person and we
           // haven't printed NUM_PRINTS persons yet, then print
