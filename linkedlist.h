@@ -17,7 +17,8 @@ public:
   LinkedList(Person *per);
   ~LinkedList();
   void operator=(const LinkedList &list);
-  void add(Person *per);
-  void remove(char *id);
-  Person *find(char *id);
+  void insertFront(Person per);
+  void printList();
+  Person *searchById(const char *id);
+  void removeById(const char *id);
 };

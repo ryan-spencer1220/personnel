@@ -33,30 +33,46 @@ void LinkedList::operator=(const LinkedList &list)
   Node *curr = list.head;
   while (curr != NULL)
   {
-    add(curr->data);
+    insertFront(*curr->data);
     curr = curr->next;
   }
 }
 
-void LinkedList::add(Person *per)
+void LinkedList::insertFront(Person per)
 {
-  Node *node = new Node;
-  node->data = per;
-  node->next = NULL;
-  if (head == NULL)
-  {
-    head = node;
-    tail = node;
-  }
-  else
-  {
-    tail->next = node;
-    tail = node;
-  }
+  Node *temp = new Node;
+  temp->data = new Person;
+  *temp->data = per;
+  temp->next = head;
+  head = temp;
   size++;
 }
 
-void LinkedList::remove(char *id)
+void LinkedList::printList()
+{
+  Node *curr = head;
+  while (curr != NULL)
+  {
+    curr->data->print();
+    curr = curr->next;
+  }
+}
+
+Person *LinkedList::searchById(const char *id)
+{
+  Node *curr = head;
+  while (curr != NULL)
+  {
+    if (strcmp(curr->data->getId(), id) == 0)
+    {
+      return curr->data;
+    }
+    curr = curr->next;
+  }
+  return NULL;
+}
+
+void LinkedList::removeById(const char *id)
 {
   Node *curr = head;
   Node *prev = NULL;
@@ -80,18 +96,5 @@ void LinkedList::remove(char *id)
     prev = curr;
     curr = curr->next;
   }
-}
-
-Person *LinkedList::find(char *id)
-{
-  Node *curr = head;
-  while (curr != NULL)
-  {
-    if (strcmp(curr->data->getId(), id) == 0)
-    {
-      return curr->data;
-    }
-    curr = curr->next;
-  }
-  return NULL;
+  cout << "Person not found." << endl;
 }
