@@ -22,11 +22,9 @@ int main()
   ll.insertFront(p2);
   ll.insertFront(p3);
   ll.printList();
-  cout << "Size: " << endl;
   // Test searches
   const Person *foundPerson;
   foundPerson = ll.searchById(id1);
-  cout << "Size: 2222" << endl;
 
   if (foundPerson == nullptr)
     cout << "ERROR searching for ID " << id1 << endl;
@@ -36,15 +34,14 @@ int main()
   foundPerson = ll.searchById("MC999"); // not-there
   if (foundPerson != nullptr)
     cout << "ERROR searching for ID MC999 (shouldn't be there)" << endl;
-  cout << "No errors found." << endl;
   // Test removes
-  // ll.removeById(id1);
+  ll.removeById(id1);
   ll.printList();
 
-  // ll.removeById(id2);
+  ll.removeById(id2);
   ll.printList();
 
-  // ll.removeById(id3);
+  ll.removeById(id3);
   ll.printList();
 
   return (0);

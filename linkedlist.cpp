@@ -1,100 +1,106 @@
 #include "linkedlist.h"
+#include <iostream>
 
 LinkedList::LinkedList()
 {
-  head = NULL;
-  tail = NULL;
+  head = nullptr;
+  tail = nullptr;
   size = 0;
 }
 
 LinkedList::LinkedList(Person *per)
 {
-  head = new Node;
-  head->data = per;
-  head->next = NULL;
-  tail = head;
-  size = 1;
+  head = nullptr;
+  tail = nullptr;
+  size = 0;
+  insertFront(*per);
 }
 
 LinkedList::~LinkedList()
 {
-  Node *curr = head;
-  while (curr != NULL)
+  Node *temp = head;
+  while (temp != nullptr)
   {
-    Node *temp = curr;
-    curr = curr->next;
-    delete temp->data;
+    head = head->next;
     delete temp;
+    temp = head;
   }
 }
 
 void LinkedList::operator=(const LinkedList &list)
 {
-  Node *curr = list.head;
-  while (curr != NULL)
+  Node *temp = list.head;
+  while (temp != nullptr)
   {
-    insertFront(*curr->data);
-    curr = curr->next;
+    insertFront(temp->data);
+    temp = temp->next;
   }
 }
 
 void LinkedList::insertFront(Person per)
 {
-  Node *temp = new Node;
-  temp->data = new Person;
-  *temp->data = per;
-  temp->next = head;
-  head = temp;
+  Node *newNode = new Node;
+  newNode->data = per;
+  newNode->next = nullptr;
+
+  if (head == nullptr)
+  {
+    head = newNode;
+    tail = newNode;
+  }
+  else
+  {
+    newNode->next = head;
+    head = newNode;
+  }
   size++;
 }
 
 void LinkedList::printList()
 {
-  Node *curr = head;
-  while (curr != NULL)
+  Node *temp = head;
+  while (temp != nullptr)
   {
-    curr->data->print();
-    curr = curr->next;
+    temp->data.print();
+    temp = temp->next;
   }
 }
 
 Person *LinkedList::searchById(const char *id)
 {
-  Node *curr = head;
-  while (curr != NULL)
+  Node *temp = head;
+  while (temp != nullptr)
   {
-    if (strcmp(curr->data->getId(), id) == 0)
+    if (strcmp(temp->data.getId(), id) == 0)
     {
-      return curr->data;
+      return &temp->data;
     }
-    curr = curr->next;
+    temp = temp->next;
   }
-  return NULL;
+  return nullptr;
 }
 
 void LinkedList::removeById(const char *id)
 {
-  Node *curr = head;
-  Node *prev = NULL;
-  while (curr != NULL)
+  Node *temp = head;
+  Node *prev = nullptr;
+  while (temp != nullptr)
   {
-    if (strcmp(curr->data->getId(), id) == 0)
+    if (strcmp(temp->data.getId(), id) == 0)
     {
-      if (prev == NULL)
+      if (prev == nullptr)
       {
-        head = curr->next;
+        head = temp->next;
       }
       else
       {
-        prev->next = curr->next;
+        prev->next = temp->next;
       }
-      delete curr->data;
-      delete curr;
+      delete temp;
       size--;
       return;
     }
-    prev = curr;
-    curr = curr->next;
+    prev = temp;
+    temp = temp->next;
   }
-  cout << "Person not found." << endl;
 }

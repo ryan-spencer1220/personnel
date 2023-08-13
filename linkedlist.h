@@ -5,7 +5,7 @@ class LinkedList
 private:
   struct Node
   {
-    Person *data;
+    Person data;
     Node *next;
   };
   Node *head;

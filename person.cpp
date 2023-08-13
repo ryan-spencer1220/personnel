@@ -23,10 +23,27 @@ Person::Person(const char *id, const char *fname, const char *lname, const char 
 
 Person::~Person()
 {
-  delete[] id;
-  delete[] fname;
-  delete[] lname;
-  delete[] familyId;
+  if (id != nullptr)
+    delete[] id;
+  if (fname != nullptr)
+    delete[] fname;
+  if (lname != nullptr)
+    delete[] lname;
+  if (familyId != nullptr)
+    delete[] familyId;
+}
+
+Person::Person(const Person &per)
+{
+  id = new char[100];
+  fname = new char[100];
+  lname = new char[100];
+  familyId = new char[100];
+
+  strcpy(id, per.id);
+  strcpy(fname, per.fname);
+  strcpy(lname, per.lname);
+  strcpy(familyId, per.familyId);
 }
 
 void Person::operator=(const Person &per)

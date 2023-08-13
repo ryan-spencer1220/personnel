@@ -15,8 +15,8 @@ public:
   Person();
   Person(const char *id, const char *fname, const char *lname, const char *familyId);
   ~Person();
+  Person(const Person &per);
   void operator=(const Person &per);
-
   char *getId();
   char *getFname();
   char *getLname();
