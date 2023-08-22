@@ -74,6 +74,9 @@ int main(int argc, char **argv)
          << endl;
     ;
 
+    // cout << "======= Exercising print ===========" << endl;
+    // personMgr.printSize();
+
     cout << "======= Exercising lookups ===========" << endl;
 
     // To exercise lookups and make sure that they are fast enough, we are going

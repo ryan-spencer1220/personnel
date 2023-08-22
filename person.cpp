@@ -2,18 +2,18 @@
 
 Person::Person()
 {
-  id = new char[100];
-  fname = new char[100];
-  lname = new char[100];
-  familyId = new char[100];
+  id = new char[MAX];
+  fname = new char[MAX];
+  lname = new char[MAX];
+  familyId = new char[MAX];
 }
 
 Person::Person(const char *id, const char *fname, const char *lname, const char *familyId)
 {
-  this->id = new char[100];
-  this->fname = new char[100];
-  this->lname = new char[100];
-  this->familyId = new char[100];
+  this->id = new char[strlen(id) + 1];
+  this->fname = new char[strlen(fname) + 1];
+  this->lname = new char[strlen(lname) + 1];
+  this->familyId = new char[strlen(familyId) + 1];
 
   strcpy(this->id, id);
   strcpy(this->fname, fname);
@@ -59,7 +59,7 @@ void Person::print()
   cout << "ID: " << id << endl;
   cout << "First Name: " << fname << endl;
   cout << "Last Name: " << lname << endl;
-  cout << "Family ID: " << familyId << endl;
+  cout << endl;
 }
 
 char *Person::getId()

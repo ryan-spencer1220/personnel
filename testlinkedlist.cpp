@@ -35,12 +35,18 @@ int main()
   if (foundPerson != nullptr)
     cout << "ERROR searching for ID MC999 (shouldn't be there)" << endl;
   // Test removes
+  cout << endl
+       << "Removing " << id1 << endl;
   ll.removeById(id1);
   ll.printList();
 
+  cout << endl
+       << "Removing " << id2 << endl;
   ll.removeById(id2);
   ll.printList();
 
+  cout << endl
+       << "Removing " << id3 << endl;
   ll.removeById(id3);
   ll.printList();
 

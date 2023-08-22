@@ -1,4 +1,9 @@
+#ifndef LINKEDLIST_H
+#define LINKEDLIST_H
+
 #include "person.h"
+#include <cstring>
+#include <iostream>
 
 class LinkedList
 {
@@ -21,4 +26,7 @@ public:
   void printList();
   Person *searchById(const char *id);
   void removeById(const char *id);
+  int getSize();
 };
+
+#endif

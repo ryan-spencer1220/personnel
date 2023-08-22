@@ -68,23 +68,25 @@ void LinkedList::printList()
 
 Person *LinkedList::searchById(const char *id)
 {
-  Node *temp = head;
-  while (temp != nullptr)
+  Node *current = head;
+  Person *per = nullptr;
+  for (int i = 0; i < size; i++)
   {
-    if (strcmp(temp->data.getId(), id) == 0)
+    if (strcmp(current->data.getId(), id) == 0)
     {
-      return &temp->data;
+      per = &current->data;
     }
-    temp = temp->next;
+    current = current->next;
   }
-  return nullptr;
+  return per;
 }
 
 void LinkedList::removeById(const char *id)
 {
   Node *temp = head;
   Node *prev = nullptr;
-  while (temp != nullptr)
+  bool found = false;
+  while (temp != nullptr && !found)
   {
     if (strcmp(temp->data.getId(), id) == 0)
     {
@@ -97,10 +99,21 @@ void LinkedList::removeById(const char *id)
         prev->next = temp->next;
       }
       delete temp;
-      size--;
-      return;
+      found = true;
     }
-    prev = temp;
-    temp = temp->next;
+    else
+    {
+      prev = temp;
+      temp = temp->next;
+    }
   }
+  if (found)
+  {
+    size--;
+  }
+}
+
+int LinkedList::getSize()
+{
+  return size;
 }

@@ -1,7 +1,13 @@
+#ifndef PERSON_H
+#define PERSON_H
+
 #include <iostream>
+#include <cstring>
 #pragma once
 
 using namespace std;
+
+const int MAX = 100;
 
 class Person
 {
@@ -29,3 +35,5 @@ public:
 
   void print();
 };
+
+#endif
